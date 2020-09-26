@@ -12,8 +12,11 @@ public final class CVCalendarMonthContentViewController: CVCalendarContentViewCo
     fileprivate var monthViews: [Identifier : MonthView]
 
     public override init(calendarView: CalendarView, frame: CGRect) {
+        
         monthViews = [Identifier : MonthView]()
         super.init(calendarView: calendarView, frame: frame)
+        //added for disable scrolling
+        self.scrollView.isScrollEnabled = false
         initialLoad(presentedMonthView.date)
     }
 
